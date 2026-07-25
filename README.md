@@ -47,7 +47,7 @@ Design for **720p / 1080i / 1080p** as a hard requirement. HDMI path uses **IT66
 
 - Spec: [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md)
 - Chips: [`docs/CHIP_SHORTLIST.md`](docs/CHIP_SHORTLIST.md)
-- Hardware: single schematic [`kicad/LivCast_Capture.kicad_sch`](kicad/LivCast_Capture.kicad_sch) via [`kicad/LivCast_Capture.kicad_pro`](kicad/LivCast_Capture.kicad_pro) — flat sch now has Power (D-Tap/PD/bucks) + condensed CM5_IO + SDI playback symbols; old sheets in [`kicad/archive_sheets/`](kicad/archive_sheets/)
+- Hardware: active sheet is a **block-diagram** schematic [`kicad/LivCast_Capture.kicad_sch`](kicad/LivCast_Capture.kicad_sch) (yellow boxes + few labeled nets; preview [`kicad/preview/LivCast_Capture_BLOCK.png`](kicad/preview/LivCast_Capture_BLOCK.png)). The dense auto-generated pin dump is archived as [`kicad/archive_sheets/LivCast_Capture_dense_pins.kicad_sch`](kicad/archive_sheets/LivCast_Capture_dense_pins.kicad_sch); older hierarchical sheets also under [`kicad/archive_sheets/`](kicad/archive_sheets/).
 - Firmware: Linux CSI capture + USB gadget + IP video
 - Phone: Livcast-iOS USB-network ingest (separate app repo)
 
