@@ -6,6 +6,7 @@ Priority: **guaranteed** 720p / **1080i** / 1080p on **both** HDMI and SDI (best
 Reference designs:
 - **Antmicro SDI→MIPI CSI bridge** (golden SDI path): [openhardware portal](https://openhardware.antmicro.com/boards/sdi-mipi-bridge/) · [GitHub](https://github.com/antmicro/sdi-mipi-bridge-hw) · local copy [`refs/antmicro-sdi-mipi-bridge/`](../refs/antmicro-sdi-mipi-bridge/) (KiCad + `doc/sdi-mipi-bridge.pdf`, Apache-2.0)
 - **SDI ingest (Antmicro):** condensed on single schematic [`kicad/LivCast_Capture.kicad_sch`](../kicad/LivCast_Capture.kicad_sch); full GS2971A + CrossLink detail in [`kicad/archive_sheets/04_SDI_CSI.kicad_sch`](../kicad/archive_sheets/04_SDI_CSI.kicad_sch) + [`refs/antmicro-sdi-mipi-bridge/`](../refs/antmicro-sdi-mipi-bridge/). Antmicro **J2/GS2988 input-loop is NOT product SDI out**.
+- **Flat sch:** Power (D-Tap/PD/bucks) + condensed **CM5_IO** + SDI playback symbols on `LivCast_Capture.kicad_sch`.
 - **SDI playback out (required):** **GS2962A** — real symbols on single schematic `LivCast_Capture.kicad_sch` (SDI PLAYBACK OUT region; from archived `07_SDI_OUT`): HDMI 1:2 buffer → **IT66021FN** → parallel → **GS2962A** → BNC; **GS2989 not required** (integrated cable driver)
 - ITE **IT6616** HDMI→CSI (datasheet: **interlaced mode in CSI**)
 - Prior Livcast adapter BOM for Semtech SDI + TI power (UVC path rejected)
