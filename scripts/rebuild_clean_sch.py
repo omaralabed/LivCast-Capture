@@ -16,6 +16,10 @@ KICAD = Path("/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli")
 PITCH = 7.62
 PIN_LEN = 3.81
 STUB = 12.7
+STUB_LONG = 25.4
+LABEL_PITCH = 15.24
+PLAY_GAP = 160.0
+PLAY_Y = 300.0
 
 
 def uid() -> str:
@@ -609,34 +613,38 @@ def main() -> None:
     labels: list[str] = []
     texts: list[str] = []
     instances: list[str] = []
+    glabel_pts: list[tuple[str, float, float]] = []  # for dedupe
 
     def emit_wire(x1, y1, x2, y2):
+        if abs(x1 - x2) < 1e-9 and abs(y1 - y2) < 1e-9:
+            return
         wires.append(
             f"\t(wire\n\t\t(pts\n\t\t\t(xy {x1:g} {y1:g}) (xy {x2:g} {y2:g})\n\t\t)\n"
             f"\t\t(stroke\n\t\t\t(width 0)\n\t\t\t(type default)\n\t\t)\n"
             f'\t\t(uuid "{uid()}")\n\t)'
         )
 
-    def emit_glabel(name, x, y, rot=0, justify="left"):
+    def emit_glabel(name, x, y, rot=0, justify="left", size=1.27):
+        glabel_pts.append((name, float(x), float(y)))
         labels.append(
             f'\t(global_label "{name}"\n'
             f"\t\t(shape bidirectional)\n"
             f"\t\t(at {x:g} {y:g} {rot})\n"
-            f"\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n"
+            f"\t\t(effects\n\t\t\t(font\n\t\t\t\t(size {size} {size})\n\t\t\t)\n"
             f"\t\t\t(justify {justify})\n\t\t)\n"
             f'\t\t(uuid "{uid()}")\n'
             f'\t\t(property "Intersheetrefs" "${{INTERSHEET_REFS}}"\n'
             f"\t\t\t(at {x:g} {y:g} 0)\n"
             f"\t\t\t(hide yes)\n"
-            f"\t\t\t(effects\n\t\t\t\t(font\n\t\t\t\t\t(size 1.27 1.27)\n\t\t\t\t)\n\t\t\t)\n"
+            f"\t\t\t(effects\n\t\t\t\t(font\n\t\t\t\t\t(size {size} {size})\n\t\t\t\t)\n\t\t\t)\n"
             f"\t\t)\n\t)"
         )
 
-    def emit_label(name, x, y):
+    def emit_label(name, x, y, size=1.27):
         labels.append(
             f'\t(label "{name}"\n'
             f"\t\t(at {x:g} {y:g} 0)\n"
-            f"\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n"
+            f"\t\t(effects\n\t\t\t(font\n\t\t\t\t(size {size} {size})\n\t\t\t)\n"
             f"\t\t\t(justify left)\n\t\t)\n"
             f'\t\t(uuid "{uid()}")\n\t)'
         )
@@ -693,16 +701,37 @@ def main() -> None:
             for p in meta["pins"]
         }
 
-    def stub(pin, net):
+    def stub(pin, net, stub_len=STUB):
         x, y, side = pin["x"], pin["y"], pin["side"]
         if side == "left":
-            x2 = x - STUB
+            x2 = x - stub_len
             emit_wire(x, y, x2, y)
             emit_glabel(net, x2, y, rot=180, justify="right")
         else:
-            x2 = x + STUB
+            x2 = x + stub_len
             emit_wire(x, y, x2, y)
             emit_glabel(net, x2, y, rot=0, justify="left")
+
+    def stub_spaced(pin, net, idx, n, cy, stub_len=STUB_LONG, pitch=LABEL_PITCH):
+        """Fan label to >=15mm pitch, stub >=20mm from pin tip."""
+        x, y, side = pin["x"], pin["y"], pin["side"]
+        y_t = cy + (n - 1) * pitch / 2 - idx * pitch
+        if side == "left":
+            x_jog = x - 5.08
+            emit_wire(x, y, x_jog, y)
+            if abs(y_t - y) > 0.01:
+                emit_wire(x_jog, y, x_jog, y_t)
+            x2 = x_jog - stub_len
+            emit_wire(x_jog, y_t, x2, y_t)
+            emit_glabel(net, x2, y_t, rot=180, justify="right")
+        else:
+            x_jog = x + 5.08
+            emit_wire(x, y, x_jog, y)
+            if abs(y_t - y) > 0.01:
+                emit_wire(x_jog, y, x_jog, y_t)
+            x2 = x_jog + stub_len
+            emit_wire(x_jog, y_t, x2, y_t)
+            emit_glabel(net, x2, y_t, rot=0, justify="left")
 
     def connect(p1, p2, mid=None):
         x1, y1 = p1["x"], p1["y"]
@@ -717,26 +746,36 @@ def main() -> None:
             emit_wire(xm, y1, xm, y2)
             emit_wire(xm, y2, x2, y2)
             if mid:
-                emit_label(mid, xm, (y1 + y2) / 2)
+                emit_label(mid, xm + 2, (y1 + y2) / 2)
+
+    def connect_via(p1, p2, via_y, mid=None):
+        """Manhattan route through a shared via_y (bypass intervening parts)."""
+        x1, y1 = p1["x"], p1["y"]
+        x2, y2 = p2["x"], p2["y"]
+        emit_wire(x1, y1, x1, via_y)
+        emit_wire(x1, via_y, x2, via_y)
+        emit_wire(x2, via_y, x2, y2)
+        if mid:
+            emit_label(mid, (x1 + x2) / 2, via_y)
 
     emit_text(
-        "LivCast Capture Rev A — sparse symbols, pin names hidden, VIDEO_BUS simplified",
+        "LivCast Capture Rev A — wire-only IC links; labels on power / region exits only",
         20,
         15,
         2.0,
     )
     emit_text(
-        "SDI playback: CM5_HDMI -> TMDS 1:2 -> HDMI mon + IT66021FN -> VIDEO_BUS -> GS2962A -> BNC",
+        "Playback row: CM5_HDMI -wires-> TMDS -OUTA wires-> HDMI mon; OUTB wires-> IT66021 -VIDEO_BUS-> GS2962 -> BNC",
         20,
         22,
     )
     emit_text(
-        "VIDEO_BUS = 20-bit parallel PDATA/DIN — expand as bus on PCB (not drawn pin-by-pin)",
+        "VIDEO_BUS = 20-bit parallel (single wire on schematic). CSI/CTRL globals pitched 15mm on long stubs.",
         20,
         28,
     )
-    emit_text("Power column left. Labels on wire stubs only. CM5 split: U201-U205.", 20, 34)
 
+    # ---- Power column (left) ----
     j101 = place("livcast-capture:Conn_DTAP", "J101", "Conn_DTAP", 50, 90, metas["Conn_DTAP"])
     stub(j101["VIN"], "VIN_RAW")
     stub(j101["GND"], "GND")
@@ -809,7 +848,8 @@ def main() -> None:
     ]:
         stub(j103[n], net)
 
-    u201 = place("livcast-capture:CM5_PWR", "U201", "CM5_PWR", 220, 120, metas["CM5_PWR"])
+    # ---- CM5 power / CSI / CTRL (separate from playback row) ----
+    u201 = place("livcast-capture:CM5_PWR", "U201", "CM5_PWR", 220, 90, metas["CM5_PWR"])
     for n, net in [
         ("+5V_1", "+5V"),
         ("+5V_2", "+5V"),
@@ -820,50 +860,55 @@ def main() -> None:
         ("USB_DP", "USB_DP"),
         ("USB_DN", "USB_DN"),
     ]:
-        stub(u201[n], net)
+        stub(u201[n], net, stub_len=STUB)
 
-    u202 = place("livcast-capture:CM5_HDMI", "U202", "CM5_HDMI", 220, 260, metas["CM5_HDMI"])
-    for n in [
-        "HDMI_TX_D0_P",
-        "HDMI_TX_D0_N",
-        "HDMI_TX_D1_P",
-        "HDMI_TX_D1_N",
-        "HDMI_TX_D2_P",
-        "HDMI_TX_D2_N",
-        "HDMI_TX_CK_P",
-        "HDMI_TX_CK_N",
-    ]:
-        stub(u202[n], n)
+    u203 = place("livcast-capture:CM5_CSI0", "U203", "CM5_CSI0", 220, 480, metas["CM5_CSI0"])
+    csi0_pins = metas["CM5_CSI0"]["pins"]
+    for i, p in enumerate(csi0_pins):
+        stub_spaced(u203[p["name"]], p["name"], i, len(csi0_pins), 480)
 
-    u203 = place("livcast-capture:CM5_CSI0", "U203", "CM5_CSI0", 220, 420, metas["CM5_CSI0"])
-    for p in metas["CM5_CSI0"]["pins"]:
-        stub(u203[p["name"]], p["name"])
+    u204 = place("livcast-capture:CM5_CSI1", "U204", "CM5_CSI1", 220, 680, metas["CM5_CSI1"])
+    csi1_pins = metas["CM5_CSI1"]["pins"]
+    for i, p in enumerate(csi1_pins):
+        stub_spaced(u204[p["name"]], p["name"], i, len(csi1_pins), 680)
 
-    u204 = place("livcast-capture:CM5_CSI1", "U204", "CM5_CSI1", 220, 560, metas["CM5_CSI1"])
-    for p in metas["CM5_CSI1"]["pins"]:
-        stub(u204[p["name"]], p["name"])
+    u205 = place("livcast-capture:CM5_CTRL", "U205", "CM5_CTRL", 220, 880, metas["CM5_CTRL"])
+    ctrl_pins = metas["CM5_CTRL"]["pins"]
+    for i, p in enumerate(ctrl_pins):
+        stub_spaced(u205[p["name"]], p["name"], i, len(ctrl_pins), 880)
 
-    u205 = place("livcast-capture:CM5_CTRL", "U205", "CM5_CTRL", 220, 700, metas["CM5_CTRL"])
-    for p in metas["CM5_CTRL"]["pins"]:
-        stub(u205[p["name"]], p["name"])
+    # ---- Playback horizontal row (>=150mm gaps) ----
+    # U202 CM5_HDMI, U301 TMDS, J201 HDMI out, U401 IT66021, U501 GS2962, J501 BNC
+    x0 = 200.0
+    xs = [x0 + i * PLAY_GAP for i in range(6)]  # 200,360,520,680,840,1000
 
+    u202 = place("livcast-capture:CM5_HDMI", "U202", "CM5_HDMI", xs[0], PLAY_Y, metas["CM5_HDMI"])
     u301 = place(
-        "livcast-capture:TMDS_BUF_1TO2", "U301", "TMDS_BUF_1TO2", 420, 260, metas["TMDS_BUF_1TO2"]
+        "livcast-capture:TMDS_BUF_1TO2", "U301", "TMDS_BUF_1TO2", xs[1], PLAY_Y, metas["TMDS_BUF_1TO2"]
     )
-    for pn, net in [
-        ("IN_D0_P", "HDMI_TX_D0_P"),
-        ("IN_D0_N", "HDMI_TX_D0_N"),
-        ("IN_D1_P", "HDMI_TX_D1_P"),
-        ("IN_D1_N", "HDMI_TX_D1_N"),
-        ("IN_D2_P", "HDMI_TX_D2_P"),
-        ("IN_D2_N", "HDMI_TX_D2_N"),
-        ("IN_CK_P", "HDMI_TX_CK_P"),
-        ("IN_CK_N", "HDMI_TX_CK_N"),
-        ("OE#", "TMDS_OE#"),
-        ("VDD", "+3V3"),
-        ("GND", "GND"),
-    ]:
-        stub(u301[pn], net)
+    j201 = place("livcast-capture:Conn_HDMI_A", "J201", "Conn_HDMI_A", xs[2], PLAY_Y, metas["Conn_HDMI_A"])
+    u401 = place("livcast-capture:IT66021FN", "U401", "IT66021FN", xs[3], PLAY_Y, metas["IT66021FN"])
+    u501 = place("livcast-capture:GS2962A", "U501", "GS2962A", xs[4], PLAY_Y, metas["GS2962A"])
+
+    # 8 wires CM5 HDMI -> U301 IN (NO labels)
+    hdmi_pairs = [
+        ("HDMI_TX_D0_P", "IN_D0_P"),
+        ("HDMI_TX_D0_N", "IN_D0_N"),
+        ("HDMI_TX_D1_P", "IN_D1_P"),
+        ("HDMI_TX_D1_N", "IN_D1_N"),
+        ("HDMI_TX_D2_P", "IN_D2_P"),
+        ("HDMI_TX_D2_N", "IN_D2_N"),
+        ("HDMI_TX_CK_P", "IN_CK_P"),
+        ("HDMI_TX_CK_N", "IN_CK_N"),
+    ]
+    for a, b in hdmi_pairs:
+        connect(u202[a], u301[b])
+
+    # U301 power / OE — labels (power + control exit)
+    stub(u301["OE#"], "TMDS_OE#")
+    stub(u301["VDD"], "+3V3")
+    stub(u301["GND"], "GND")
+
     outa = [
         "OUTA_D0_P",
         "OUTA_D0_N",
@@ -874,6 +919,23 @@ def main() -> None:
         "OUTA_CK_P",
         "OUTA_CK_N",
     ]
+    j_hdmi = ["D0_P", "D0_N", "D1_P", "D1_N", "D2_P", "D2_N", "CK_P", "CK_N"]
+    # OUTA -> J201 wires, NO labels; one text "to monitor"
+    for a, b in zip(outa, j_hdmi):
+        connect(u301[a], j201[b])
+    emit_text("to monitor", (xs[1] + xs[2]) / 2, PLAY_Y - 70, 1.27)
+
+    # J201 non-TMDS pins: power / region exits only
+    for pn, net in [
+        ("DDC_SDA", "HDMI_MON_DDC_SDA"),
+        ("DDC_SCL", "HDMI_MON_DDC_SCL"),
+        ("HPD", "HDMI_MON_HPD"),
+        ("+5V", "+5V_HDMI"),
+        ("GND", "GND"),
+        ("SHIELD", "GND"),
+    ]:
+        stub(j201[pn], net)
+
     outb = [
         "OUTB_D0_P",
         "OUTB_D0_N",
@@ -884,60 +946,14 @@ def main() -> None:
         "OUTB_CK_P",
         "OUTB_CK_N",
     ]
-    mon = [
-        "HDMI_MON_D0_P",
-        "HDMI_MON_D0_N",
-        "HDMI_MON_D1_P",
-        "HDMI_MON_D1_N",
-        "HDMI_MON_D2_P",
-        "HDMI_MON_D2_N",
-        "HDMI_MON_CK_P",
-        "HDMI_MON_CK_N",
-    ]
-    rx = [
-        "HDMI_RX_D0_P",
-        "HDMI_RX_D0_N",
-        "HDMI_RX_D1_P",
-        "HDMI_RX_D1_N",
-        "HDMI_RX_D2_P",
-        "HDMI_RX_D2_N",
-        "HDMI_RX_CK_P",
-        "HDMI_RX_CK_N",
-    ]
-    for pn, net in zip(outa, mon):
-        stub(u301[pn], net)
-    for pn, net in zip(outb, rx):
-        stub(u301[pn], net)
+    rx = ["RX0_P", "RX0_N", "RX1_P", "RX1_N", "RX2_P", "RX2_N", "RXC_P", "RXC_N"]
+    # OUTB -> U401: route BELOW J201 body so wires don't cross connector
+    via_y = PLAY_Y + 95
+    for i, (a, b) in enumerate(zip(outb, rx)):
+        connect_via(u301[a], u401[b], via_y + i * 2.54)
 
-    j201 = place("livcast-capture:Conn_HDMI_A", "J201", "Conn_HDMI_A", 620, 120, metas["Conn_HDMI_A"])
+    # U401 HDMI aux / power / I2C — labels (not the wired RX lanes)
     for pn, net in [
-        ("D0_P", "HDMI_MON_D0_P"),
-        ("D0_N", "HDMI_MON_D0_N"),
-        ("D1_P", "HDMI_MON_D1_P"),
-        ("D1_N", "HDMI_MON_D1_N"),
-        ("D2_P", "HDMI_MON_D2_P"),
-        ("D2_N", "HDMI_MON_D2_N"),
-        ("CK_P", "HDMI_MON_CK_P"),
-        ("CK_N", "HDMI_MON_CK_N"),
-        ("DDC_SDA", "HDMI_MON_DDC_SDA"),
-        ("DDC_SCL", "HDMI_MON_DDC_SCL"),
-        ("HPD", "HDMI_MON_HPD"),
-        ("+5V", "+5V_HDMI"),
-        ("GND", "GND"),
-        ("SHIELD", "GND"),
-    ]:
-        stub(j201[pn], net)
-
-    u401 = place("livcast-capture:IT66021FN", "U401", "IT66021FN", 620, 360, metas["IT66021FN"])
-    for pn, net in [
-        ("RX0_P", "HDMI_RX_D0_P"),
-        ("RX0_N", "HDMI_RX_D0_N"),
-        ("RX1_P", "HDMI_RX_D1_P"),
-        ("RX1_N", "HDMI_RX_D1_N"),
-        ("RX2_P", "HDMI_RX_D2_P"),
-        ("RX2_N", "HDMI_RX_D2_N"),
-        ("RXC_P", "HDMI_RX_CK_P"),
-        ("RXC_N", "HDMI_RX_CK_N"),
         ("HPD", "HDMI_RX_HPD"),
         ("DDC_SDA", "HDMI_RX_DDC_SDA"),
         ("DDC_SCL", "HDMI_RX_DDC_SCL"),
@@ -946,17 +962,6 @@ def main() -> None:
         ("I2C_SDA", "I2C_SDA"),
         ("I2C_SCL", "I2C_SCL"),
         ("INT#", "IT66021_INT#"),
-    ]:
-        stub(u401[pn], net)
-
-    u501 = place("livcast-capture:GS2962A", "U501", "GS2962A", 820, 360, metas["GS2962A"])
-    connect(u401["VIDEO_BUS"], u501["VIDEO_BUS"], "VIDEO_BUS")
-    connect(u401["PCLK"], u501["PCLK"], "PCLK")
-    connect(u401["HS"], u501["H_HSYNC"], "HS")
-    connect(u401["VS"], u501["V_VSYNC"], "VS")
-    connect(u401["DE"], u501["F_DE"], "DE")
-
-    for pn, net in [
         ("VDD33", "+3V3"),
         ("VDD18", "+1V8"),
         ("VDD12", "+1V2"),
@@ -966,6 +971,19 @@ def main() -> None:
     ]:
         stub(u401[pn], net)
 
+    # VIDEO_BUS single wire + mid label only
+    connect(u401["VIDEO_BUS"], u501["VIDEO_BUS"], "VIDEO_BUS")
+    # PCLK/HS/VS/DE wires with optional short local mid labels spaced 15mm+
+    sync = [
+        ("PCLK", "PCLK", "PCLK"),
+        ("HS", "H_HSYNC", "HS"),
+        ("VS", "V_VSYNC", "VS"),
+        ("DE", "F_DE", "DE"),
+    ]
+    for a, b, mid in sync:
+        connect(u401[a], u501[b], mid)
+
+    # U501 config / SPI / power stubs (region exits); SDO wired to BNC
     for pn, net in [
         ("SDO_EN", "SDO_EN"),
         ("STANDBY#", "GS_STANDBY#"),
@@ -978,7 +996,6 @@ def main() -> None:
         ("SDOUT", "GS_SDOUT"),
         ("SCLK", "SDI_TX_SPI_SCK"),
         ("CS#", "SDI_TX_SPI_CS"),
-        ("SDO", "SDI_TX_P"),
         ("SDO#", "SDI_TX_N"),
         ("VDD_CORE_1V2", "+1V2"),
         ("VDD_IO", "+3V3"),
@@ -991,9 +1008,9 @@ def main() -> None:
     ]:
         stub(u501[pn], net)
 
-    # BNC
+    # BNC J501
     bnc_meta = {"height": 10.0, "pins": bnc_pins}
-    bnc_at = (1020.0, 360.0)
+    bnc_at = (xs[5], PLAY_Y)
     pins_block = "\n".join(
         f'\t\t(pin "{p["num"]}"\n\t\t\t(uuid "{uid()}")\n\t\t)' for p in bnc_pins
     )
@@ -1024,17 +1041,47 @@ def main() -> None:
         f"\t\t\t(effects\n\t\t\t\t(font\n\t\t\t\t\t(size 1.27 1.27)\n\t\t\t\t)\n\t\t\t)\n\t\t)\n"
         f"{pins_block}\n\t)"
     )
+    bnc_pinmap = {}
     for p in bnc_pins:
         ax, ay = bnc_at[0] + p["x"], bnc_at[1] + p["y"]
+        bnc_pinmap[p["num"]] = {"x": ax, "y": ay, "side": p.get("side", "left"), "num": p["num"]}
         if p["num"] == "1":
-            emit_wire(ax, ay, ax - STUB, ay)
-            emit_glabel("SDI_TX_P", ax - STUB, ay, rot=180, justify="right")
+            # wire from U501 SDO — no label on this link
+            connect(u501["SDO"], {"x": ax, "y": ay, "side": "left", "num": "1"})
         else:
             emit_wire(ax, ay, ax, ay - STUB)
             emit_glabel("GND", ax, ay - STUB, rot=270, justify="right")
 
-    emit_text("HDMI IN ingest - TBD (archive_sheets/03)", 40, 800)
-    emit_text("SDI IN ingest - TBD (archive_sheets/04, Antmicro)", 40, 808)
+    emit_text("HDMI IN ingest - TBD (archive_sheets/03)", 40, 1000)
+    emit_text("SDI IN ingest - TBD (archive_sheets/04, Antmicro)", 40, 1008)
+
+    # Deduplicate global_labels whose y-neighbors are within 5mm in same column
+    # Rebuild labels list filtering glabel_pts
+    kept_idx = []
+    by_col: dict[int, list[tuple[int, float]]] = {}
+    for i, (name, x, y) in enumerate(glabel_pts):
+        col = round(x)
+        by_col.setdefault(col, []).append((i, y))
+    drop = set()
+    for col, items in by_col.items():
+        items_sorted = sorted(items, key=lambda t: t[1])
+        last_y = None
+        for i, y in items_sorted:
+            if last_y is not None and abs(y - last_y) < 5.0:
+                drop.add(i)
+            else:
+                last_y = y
+                kept_idx.append(i)
+    if drop:
+        # Filter: labels list has same order as glabel_pts for globals, but also local labels/texts mixed.
+        # Safer: regenerate only global labels from kept points — rewrite labels keeping non-global.
+        non_global = [lb for lb in labels if not lb.lstrip().startswith("(global_label")]
+        # Re-emit kept globals from original label strings
+        global_labels = [lb for lb in labels if lb.lstrip().startswith("(global_label")]
+        assert len(global_labels) == len(glabel_pts)
+        kept_globals = [global_labels[i] for i in range(len(global_labels)) if i not in drop]
+        labels = non_global + kept_globals
+        print(f"Deduped global_labels: dropped {len(drop)} stacked within 5mm")
 
     parts = [
         "(kicad_sch",
@@ -1048,8 +1095,8 @@ def main() -> None:
         '\t\t(date "2026-07-25")',
         '\t\t(rev "A")',
         '\t\t(company "LivCast")',
-        '\t\t(comment 1 "Pin names hidden; CM5 split U201-U205; VIDEO_BUS single wire")',
-        '\t\t(comment 2 "SDI playback: CM5->TMDS->HDMI+IT66021->VIDEO_BUS->GS2962->BNC")',
+        '\t\t(comment 1 "Wire-only IC links; labels on power/region exits; pin names hidden")',
+        '\t\t(comment 2 "Playback row >=150mm gaps; VIDEO_BUS single mid-label wire")',
         "\t)",
         "\t(lib_symbols",
     ]
@@ -1075,7 +1122,9 @@ def main() -> None:
     assert text.count("(") == text.count(")")
     SCH_PATH.write_text(text)
     print(f"Wrote {SCH_PATH} ({SCH_PATH.stat().st_size} bytes)")
-    print(f"instances={len(instances)} wires={len(wires)} labels={len(labels)}")
+    n_g = sum(1 for lb in labels if lb.lstrip().startswith("(global_label"))
+    print(f"instances={len(instances)} wires={len(wires)} labels_blocks={len(labels)} global_labels={n_g}")
+
 
 
 if __name__ == "__main__":

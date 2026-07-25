@@ -1,0 +1,4126 @@
+(export
+	(version "E")
+	(design
+		(source "/Users/viewvision/Desktop/LivCast Capture/kicad/LivCast_Capture.kicad_sch")
+		(date "2026-07-25T18:57:18")
+		(tool "Eeschema 10.0.5-rc1")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "LivCast Capture - Complete")
+				(company "LivCast")
+				(rev "A")
+				(date "2026-07-25")
+				(source "LivCast_Capture.kicad_sch")
+				(comment
+					(number "1")
+					(value "Wire-only IC links; labels on power/region exits; pin names hidden")
+				)
+				(comment
+					(number "2")
+					(value "Playback row >=150mm gaps; VIDEO_BUS single mid-label wire")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "J101")
+			(value "Conn_DTAP")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "Conn_DTAP")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "24b19ffb-b503-41d2-8f3a-3bf84f897dd2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J102")
+			(value "Conn_USB_C_PWR")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "Conn_USB_C_PWR")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "561d8dc3-4ba1-46a7-9be6-65c3665b5596")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J103")
+			(value "Conn_USB_C_DATA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "Conn_USB_C_DATA")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0e1804a6-f7ae-4528-a3f6-8a9216541050")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J201")
+			(value "Conn_HDMI_A")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "Conn_HDMI_A")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a106d6d2-e5a0-4f4a-9512-9a7614dd0ca7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J501")
+			(value "Conn_BNC_031-70526-21")
+			(footprint "sdi-mipi-bridge-footprints:Conn_BNC_031-70526-21")
+			(fields
+				(field
+					(name "Footprint") "sdi-mipi-bridge-footprints:Conn_BNC_031-70526-21")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "sdi-mipi-bridge")
+				(part "Conn_BNC_031-70526-21")
+				(description "RF Coaxial Connector 75OHM EDGE MOUNT BNC")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*BNC* *SMA* *SMB* *SMC* *Cinch*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "01768f7f-7291-4c13-88a4-cb59b43d443d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U101")
+			(value "TPS25751D")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "TPS25751D")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c2900acb-1b4c-4271-aff9-804bc0dbd6ec")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U102")
+			(value "LM76003")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "LM76003")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "28d18d4b-eac0-42de-ac9d-5832aa4b6ef0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U103")
+			(value "TPS62130A")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "TPS62130A")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c5c129bc-5327-4a07-8765-4f295a61baa7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U201")
+			(value "CM5_PWR")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "CM5_PWR")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "860c742d-440c-4f38-a5c2-d70918a109fc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U202")
+			(value "CM5_HDMI")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "CM5_HDMI")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9223e475-3b84-4ab8-8c4e-6b5b43b74cfd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U203")
+			(value "CM5_CSI0")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "CM5_CSI0")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "88b033a1-750b-48c2-aaf1-4b041ecd52be")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U204")
+			(value "CM5_CSI1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "CM5_CSI1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0ecf4465-62cc-4890-8f32-bd9a7d3fb4b5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U205")
+			(value "CM5_CTRL")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "CM5_CTRL")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bce4ea1f-a913-4fe0-8f46-98308ea7d7b3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U301")
+			(value "TMDS_BUF_1TO2")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "TMDS_BUF_1TO2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5d9a369b-8135-4025-b556-1fc96ffb5f74")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "27")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U401")
+			(value "IT66021FN")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "IT66021FN")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5bc2e585-242e-4cd3-884f-4ab9abb650f0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "27")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U501")
+			(value "GS2962A")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "livcast-capture")
+				(part "GS2962A")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "LivCast_Capture")
+			)
+			(property
+				(name "Sheetfile")
+				(value "LivCast_Capture.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a261526e-53d8-4752-a67f-31518ce76c59")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "26")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "livcast-capture")
+			(part "CM5_CSI0")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "CM5_CSI0")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "CM5_CSI0")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "CSI0_D0_P")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "CSI0_D0_N")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "CSI0_D1_P")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "CSI0_D1_N")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "CSI0_D2_P")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "CSI0_D2_N")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "CSI0_D3_P")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "CSI0_D3_N")
+					(type "input")
+				)
+				(pin
+					(num "9")
+					(name "CSI0_CK_P")
+					(type "input")
+				)
+				(pin
+					(num "10")
+					(name "CSI0_CK_N")
+					(type "input")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "CM5_CSI1")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "CM5_CSI1")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "CM5_CSI1")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "CSI1_D0_P")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "CSI1_D0_N")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "CSI1_D1_P")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "CSI1_D1_N")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "CSI1_D2_P")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "CSI1_D2_N")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "CSI1_D3_P")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "CSI1_D3_N")
+					(type "input")
+				)
+				(pin
+					(num "9")
+					(name "CSI1_CK_P")
+					(type "input")
+				)
+				(pin
+					(num "10")
+					(name "CSI1_CK_N")
+					(type "input")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "CM5_CTRL")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "CM5_CTRL")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "CM5_CTRL")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "I2C_SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "I2C_SCL")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "SPI_MOSI")
+					(type "output")
+				)
+				(pin
+					(num "4")
+					(name "SPI_MISO")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "SPI_SCK")
+					(type "output")
+				)
+				(pin
+					(num "6")
+					(name "SPI_CS")
+					(type "output")
+				)
+				(pin
+					(num "7")
+					(name "SDI_TX_SPI_MOSI")
+					(type "output")
+				)
+				(pin
+					(num "8")
+					(name "SDI_TX_SPI_SCK")
+					(type "output")
+				)
+				(pin
+					(num "9")
+					(name "SDI_TX_SPI_CS")
+					(type "output")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "CM5_HDMI")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "CM5_HDMI")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "CM5_HDMI")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "HDMI_TX_D0_P")
+					(type "output")
+				)
+				(pin
+					(num "2")
+					(name "HDMI_TX_D0_N")
+					(type "output")
+				)
+				(pin
+					(num "3")
+					(name "HDMI_TX_D1_P")
+					(type "output")
+				)
+				(pin
+					(num "4")
+					(name "HDMI_TX_D1_N")
+					(type "output")
+				)
+				(pin
+					(num "5")
+					(name "HDMI_TX_D2_P")
+					(type "output")
+				)
+				(pin
+					(num "6")
+					(name "HDMI_TX_D2_N")
+					(type "output")
+				)
+				(pin
+					(num "7")
+					(name "HDMI_TX_CK_P")
+					(type "output")
+				)
+				(pin
+					(num "8")
+					(name "HDMI_TX_CK_N")
+					(type "output")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "CM5_PWR")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "CM5_PWR")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "CM5_PWR")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "+5V_1")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "+5V_2")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "+5V_3")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "GND_1")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "GND_2")
+					(type "power_in")
+				)
+				(pin
+					(num "6")
+					(name "GND_3")
+					(type "power_in")
+				)
+				(pin
+					(num "7")
+					(name "USB_DP")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "USB_DN")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "Conn_DTAP")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_DTAP")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "Conn_DTAP")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "Conn_HDMI_A")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_HDMI_A")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "Conn_HDMI_A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "D0_P")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "D0_N")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "D1_P")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "D1_N")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "D2_P")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "D2_N")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "CK_P")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "CK_N")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "DDC_SDA")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "DDC_SCL")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "HPD")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "+5V")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "SHIELD")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "Conn_USB_C_DATA")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_USB_C_DATA")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "Conn_USB_C_DATA")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VBUS")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "USB_DP")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "USB_DN")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "CC1")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "CC2")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "Conn_USB_C_PWR")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_USB_C_PWR")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "Conn_USB_C_PWR")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VBUS")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "CC1")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "CC2")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "GS2962A")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "GS2962A")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "GS2962A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIDEO_BUS")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "PCLK")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "H_HSYNC")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "V_VSYNC")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "F_DE")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "SDO_EN")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "STANDBY#")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "BIT20_10")
+					(type "input")
+				)
+				(pin
+					(num "9")
+					(name "RATE_SEL0")
+					(type "input")
+				)
+				(pin
+					(num "10")
+					(name "RATE_SEL1")
+					(type "input")
+				)
+				(pin
+					(num "11")
+					(name "SMPTE_BYPASS")
+					(type "input")
+				)
+				(pin
+					(num "12")
+					(name "DVB_ASI")
+					(type "input")
+				)
+				(pin
+					(num "13")
+					(name "SDIN")
+					(type "input")
+				)
+				(pin
+					(num "14")
+					(name "SDOUT")
+					(type "output")
+				)
+				(pin
+					(num "15")
+					(name "SCLK")
+					(type "input")
+				)
+				(pin
+					(num "16")
+					(name "CS#")
+					(type "input")
+				)
+				(pin
+					(num "17")
+					(name "SDO")
+					(type "output")
+				)
+				(pin
+					(num "18")
+					(name "SDO#")
+					(type "output")
+				)
+				(pin
+					(num "19")
+					(name "VDD_CORE_1V2")
+					(type "power_in")
+				)
+				(pin
+					(num "20")
+					(name "VDD_IO")
+					(type "power_in")
+				)
+				(pin
+					(num "21")
+					(name "VDD_A_3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "22")
+					(name "VDD_CD")
+					(type "power_in")
+				)
+				(pin
+					(num "23")
+					(name "GND1")
+					(type "power_in")
+				)
+				(pin
+					(num "24")
+					(name "GND2")
+					(type "power_in")
+				)
+				(pin
+					(num "25")
+					(name "GND3")
+					(type "power_in")
+				)
+				(pin
+					(num "26")
+					(name "GND4")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "IT66021FN")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "IT66021FN")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "IT66021FN")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "RX0_P")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "RX0_N")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "RX1_P")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "RX1_N")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "RX2_P")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "RX2_N")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "RXC_P")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "RXC_N")
+					(type "input")
+				)
+				(pin
+					(num "9")
+					(name "HPD")
+					(type "output")
+				)
+				(pin
+					(num "10")
+					(name "DDC_SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "DDC_SCL")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "+5V_HDMI")
+					(type "power_in")
+				)
+				(pin
+					(num "13")
+					(name "RESET#")
+					(type "input")
+				)
+				(pin
+					(num "14")
+					(name "I2C_SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "15")
+					(name "I2C_SCL")
+					(type "bidirectional")
+				)
+				(pin
+					(num "16")
+					(name "INT#")
+					(type "open_collector")
+				)
+				(pin
+					(num "17")
+					(name "VIDEO_BUS")
+					(type "output")
+				)
+				(pin
+					(num "18")
+					(name "PCLK")
+					(type "output")
+				)
+				(pin
+					(num "19")
+					(name "HS")
+					(type "output")
+				)
+				(pin
+					(num "20")
+					(name "VS")
+					(type "output")
+				)
+				(pin
+					(num "21")
+					(name "DE")
+					(type "output")
+				)
+				(pin
+					(num "22")
+					(name "VDD33")
+					(type "power_in")
+				)
+				(pin
+					(num "23")
+					(name "VDD18")
+					(type "power_in")
+				)
+				(pin
+					(num "24")
+					(name "VDD12")
+					(type "power_in")
+				)
+				(pin
+					(num "25")
+					(name "GND1")
+					(type "power_in")
+				)
+				(pin
+					(num "26")
+					(name "GND2")
+					(type "power_in")
+				)
+				(pin
+					(num "27")
+					(name "GND3")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "LM76003")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "LM76003")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "LM76003")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "EN")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "FB")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "SS")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "SW")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "VOUT")
+					(type "power_out")
+				)
+				(pin
+					(num "8")
+					(name "PG")
+					(type "open_collector")
+				)
+				(pin
+					(num "9")
+					(name "BOOT")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "TMDS_BUF_1TO2")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TMDS_BUF_1TO2")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "TMDS_BUF_1TO2")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "IN_D0_P")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "IN_D0_N")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "IN_D1_P")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "IN_D1_N")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "IN_D2_P")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "IN_D2_N")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "IN_CK_P")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "IN_CK_N")
+					(type "input")
+				)
+				(pin
+					(num "9")
+					(name "OE#")
+					(type "input")
+				)
+				(pin
+					(num "10")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "11")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "12")
+					(name "OUTA_D0_P")
+					(type "output")
+				)
+				(pin
+					(num "13")
+					(name "OUTA_D0_N")
+					(type "output")
+				)
+				(pin
+					(num "14")
+					(name "OUTA_D1_P")
+					(type "output")
+				)
+				(pin
+					(num "15")
+					(name "OUTA_D1_N")
+					(type "output")
+				)
+				(pin
+					(num "16")
+					(name "OUTA_D2_P")
+					(type "output")
+				)
+				(pin
+					(num "17")
+					(name "OUTA_D2_N")
+					(type "output")
+				)
+				(pin
+					(num "18")
+					(name "OUTA_CK_P")
+					(type "output")
+				)
+				(pin
+					(num "19")
+					(name "OUTA_CK_N")
+					(type "output")
+				)
+				(pin
+					(num "20")
+					(name "OUTB_D0_P")
+					(type "output")
+				)
+				(pin
+					(num "21")
+					(name "OUTB_D0_N")
+					(type "output")
+				)
+				(pin
+					(num "22")
+					(name "OUTB_D1_P")
+					(type "output")
+				)
+				(pin
+					(num "23")
+					(name "OUTB_D1_N")
+					(type "output")
+				)
+				(pin
+					(num "24")
+					(name "OUTB_D2_P")
+					(type "output")
+				)
+				(pin
+					(num "25")
+					(name "OUTB_D2_N")
+					(type "output")
+				)
+				(pin
+					(num "26")
+					(name "OUTB_CK_P")
+					(type "output")
+				)
+				(pin
+					(num "27")
+					(name "OUTB_CK_N")
+					(type "output")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "TPS25751D")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS25751D")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "TPS25751D")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VBUS")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "CC1")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "CC2")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "VIN_3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "6")
+					(name "I2C_SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "I2C_SCL")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "PP5V")
+					(type "power_out")
+				)
+				(pin
+					(num "9")
+					(name "PPHV")
+					(type "power_out")
+				)
+				(pin
+					(num "10")
+					(name "GPIO1")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "GND2")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "livcast-capture")
+			(part "TPS62130A")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS62130A")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+				(field
+					(name "MPN") "TPS62130A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "EN")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "FB")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "SS")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "SW")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "VOUT")
+					(type "power_out")
+				)
+				(pin
+					(num "8")
+					(name "PG")
+					(type "open_collector")
+				)
+				(pin
+					(num "9")
+					(name "BOOT")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "sdi-mipi-bridge")
+			(part "Conn_BNC_031-70526-21")
+			(description "RF Coaxial Connector 75OHM EDGE MOUNT BNC")
+			(docs "https://www.farnell.com/cad/2305565.pdf?_ga=2.190633003.1014497200.1574067480-156563690.1566371002&_gac=1.57062104.1572875319.Cj0KCQiAtf_tBRDtARIsAIbAKe0A1M5y_jdFCiNLNrHM5L2GjmDvn_4qnRvhHAD9jBdL9AmoMNThLCoaAjhJEALw_wcB")
+			(footprints
+				(fp "*BNC*")
+				(fp "*SMA*")
+				(fp "*SMB*")
+				(fp "*SMC*")
+				(fp "*Cinch*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_BNC_031-70526-21")
+				(field
+					(name "Footprint") "sdi-mipi-bridge-footprints:Conn_BNC_031-70526-21")
+				(field
+					(name "Datasheet") "https://www.farnell.com/cad/2305565.pdf?_ga=2.190633003.1014497200.1574067480-156563690.1566371002&_gac=1.57062104.1572875319.Cj0KCQiAtf_tBRDtARIsAIbAKe0A1M5y_jdFCiNLNrHM5L2GjmDvn_4qnRvhHAD9jBdL9AmoMNThLCoaAjhJEALw_wcB")
+				(field
+					(name "Description") "RF Coaxial Connector 75OHM EDGE MOUNT BNC")
+				(field
+					(name "MPN") "031-70526-21")
+				(field
+					(name "Manufacturer") "Amphenol")
+				(field
+					(name "Author") "Antmicro")
+				(field
+					(name "License") "Apache-2.0")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "livcast-capture")
+			(uri "${KIPRJMOD}/libs/livcast-capture/livcast-capture.kicad_sym")
+		)
+		(library
+			(logical "sdi-mipi-bridge")
+			(uri "${KIPRJMOD}/libs/antmicro-sdi-mipi/sdi-mipi-bridge.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+1V2")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "20")
+				(pinfunction "VS_20")
+				(pintype "output")
+			)
+			(node
+				(ref "U501")
+				(pin "21")
+				(pinfunction "VDD_A_3V3_21")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "24")
+				(pinfunction "GND2_24")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "+1V8")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "21")
+				(pinfunction "DE_21")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "3")
+			(name "+3V3")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "3")
+				(pinfunction "CC2_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U103")
+				(pin "8")
+				(pinfunction "PG_8")
+				(pintype "open_collector")
+			)
+			(node
+				(ref "U301")
+				(pin "2")
+				(pinfunction "IN_D0_N_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U401")
+				(pin "22")
+				(pinfunction "VDD33_22")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "22")
+				(pinfunction "VDD_CD_22")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "23")
+				(pinfunction "GND1_23")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "4")
+			(name "+5V")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "8")
+				(pinfunction "PG_8")
+				(pintype "open_collector")
+			)
+			(node
+				(ref "U103")
+				(pin "5")
+				(pinfunction "SS_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "6")
+				(pinfunction "GND_3_6")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U201")
+				(pin "7")
+				(pinfunction "USB_DP_7")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U201")
+				(pin "8")
+				(pinfunction "USB_DN_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "5")
+			(name "+5V_HDMI")
+			(class "Default")
+			(node
+				(ref "J201")
+				(pin "3")
+				(pinfunction "D1_P_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U401")
+				(pin "5")
+				(pinfunction "RX2_P_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "11")
+			(name "BIT20_10")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "9")
+				(pinfunction "RATE_SEL0_9")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "12")
+			(name "BOOT_3V3")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "6")
+				(pinfunction "SW_6")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "13")
+			(name "BOOT_5V")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "6")
+				(pinfunction "SW_6")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "BUCK33_EN")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "4")
+				(pinfunction "FB_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "15")
+			(name "BUCK_EN")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "4")
+				(pinfunction "FB_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "16")
+			(name "CC1_DATA")
+			(class "Default")
+			(node
+				(ref "J103")
+				(pin "3")
+				(pinfunction "USB_DN_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "17")
+			(name "CC1_PWR")
+			(class "Default")
+			(node
+				(ref "J102")
+				(pin "3")
+				(pinfunction "CC2_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "6")
+				(pinfunction "I2C_SDA_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "18")
+			(name "CC2_DATA")
+			(class "Default")
+			(node
+				(ref "J103")
+				(pin "2")
+				(pinfunction "USB_DP_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "19")
+			(name "CC2_PWR")
+			(class "Default")
+			(node
+				(ref "J102")
+				(pin "2")
+				(pinfunction "CC1_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "5")
+				(pinfunction "VIN_3V3_5")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "20")
+			(name "CSI0_CK_N")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "1")
+				(pinfunction "CSI0_D0_P_1")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "21")
+			(name "CSI0_CK_P")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "2")
+				(pinfunction "CSI0_D0_N_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "22")
+			(name "CSI0_D0_N")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "9")
+				(pinfunction "CSI0_CK_P_9")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "23")
+			(name "CSI0_D0_P")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "10")
+				(pinfunction "CSI0_CK_N_10")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "24")
+			(name "CSI0_D1_N")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "7")
+				(pinfunction "CSI0_D3_P_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "25")
+			(name "CSI0_D1_P")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "8")
+				(pinfunction "CSI0_D3_N_8")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "26")
+			(name "CSI0_D2_N")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "5")
+				(pinfunction "CSI0_D2_P_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "27")
+			(name "CSI0_D2_P")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "6")
+				(pinfunction "CSI0_D2_N_6")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "28")
+			(name "CSI0_D3_N")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "3")
+				(pinfunction "CSI0_D1_P_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "29")
+			(name "CSI0_D3_P")
+			(class "Default")
+			(node
+				(ref "U203")
+				(pin "4")
+				(pinfunction "CSI0_D1_N_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "30")
+			(name "CSI1_CK_N")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "1")
+				(pinfunction "CSI1_D0_P_1")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "31")
+			(name "CSI1_CK_P")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "2")
+				(pinfunction "CSI1_D0_N_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "32")
+			(name "CSI1_D0_N")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "9")
+				(pinfunction "CSI1_CK_P_9")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "33")
+			(name "CSI1_D0_P")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "10")
+				(pinfunction "CSI1_CK_N_10")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "34")
+			(name "CSI1_D1_N")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "7")
+				(pinfunction "CSI1_D3_P_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "35")
+			(name "CSI1_D1_P")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "8")
+				(pinfunction "CSI1_D3_N_8")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "36")
+			(name "CSI1_D2_N")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "5")
+				(pinfunction "CSI1_D2_P_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "37")
+			(name "CSI1_D2_P")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "6")
+				(pinfunction "CSI1_D2_N_6")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "38")
+			(name "CSI1_D3_N")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "3")
+				(pinfunction "CSI1_D1_P_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "39")
+			(name "CSI1_D3_P")
+			(class "Default")
+			(node
+				(ref "U204")
+				(pin "4")
+				(pinfunction "CSI1_D1_N_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "40")
+			(name "DVB_ASI")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "5")
+				(pinfunction "F_DE_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "41")
+			(name "FB_3V3")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "2")
+				(pinfunction "EN_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "42")
+			(name "FB_5V")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "2")
+				(pinfunction "EN_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "43")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "J101")
+				(pin "1")
+				(pinfunction "VIN_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J102")
+				(pin "1")
+				(pinfunction "VBUS_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J103")
+				(pin "1")
+				(pinfunction "VBUS_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "1")
+				(pinfunction "D0_P_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "2")
+				(pinfunction "D0_N_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U101")
+				(pin "8")
+				(pinfunction "PP5V_8")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U102")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U103")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U201")
+				(pin "3")
+				(pinfunction "+5V_3_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U201")
+				(pin "4")
+				(pinfunction "GND_1_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U201")
+				(pin "5")
+				(pinfunction "GND_2_5")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U301")
+				(pin "1")
+				(pinfunction "IN_D0_P_1")
+				(pintype "input")
+			)
+			(node
+				(ref "U401")
+				(pin "17")
+				(pinfunction "VIDEO_BUS_17")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "18")
+				(pinfunction "PCLK_18")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "19")
+				(pinfunction "HS_19")
+				(pintype "output")
+			)
+			(node
+				(ref "U501")
+				(pin "17")
+				(pinfunction "SDO_17")
+				(pintype "output")
+			)
+			(node
+				(ref "U501")
+				(pin "18")
+				(pinfunction "SDO#_18")
+				(pintype "output")
+			)
+			(node
+				(ref "U501")
+				(pin "19")
+				(pinfunction "VDD_CORE_1V2_19")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "20")
+				(pinfunction "VDD_IO_20")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "44")
+			(name "GS_SDOUT")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "3")
+				(pinfunction "H_HSYNC_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "45")
+			(name "GS_STANDBY#")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "10")
+				(pinfunction "RATE_SEL1_10")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "46")
+			(name "HDMI_MON_DDC_SCL")
+			(class "Default")
+			(node
+				(ref "J201")
+				(pin "5")
+				(pinfunction "D2_P_5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "47")
+			(name "HDMI_MON_DDC_SDA")
+			(class "Default")
+			(node
+				(ref "J201")
+				(pin "6")
+				(pinfunction "D2_N_6")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "48")
+			(name "HDMI_MON_HPD")
+			(class "Default")
+			(node
+				(ref "J201")
+				(pin "4")
+				(pinfunction "D1_N_4")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "49")
+			(name "HDMI_RX_DDC_SCL")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "6")
+				(pinfunction "RX2_N_6")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "50")
+			(name "HDMI_RX_DDC_SDA")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "7")
+				(pinfunction "RXC_P_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "51")
+			(name "HDMI_RX_HPD")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "8")
+				(pinfunction "RXC_N_8")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "52")
+			(name "I2C_SCL")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "1")
+				(pinfunction "VBUS_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U205")
+				(pin "8")
+				(pinfunction "SDI_TX_SPI_SCK_8")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "2")
+				(pinfunction "RX0_N_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "53")
+			(name "I2C_SDA")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "2")
+				(pinfunction "CC1_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U205")
+				(pin "6")
+				(pinfunction "SPI_CS_6")
+				(pintype "output")
+			)
+			(node
+				(ref "U205")
+				(pin "7")
+				(pinfunction "SDI_TX_SPI_MOSI_7")
+				(pintype "output")
+			)
+			(node
+				(ref "U205")
+				(pin "9")
+				(pinfunction "SDI_TX_SPI_CS_9")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "3")
+				(pinfunction "RX1_P_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "54")
+			(name "IT66021_INT#")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "1")
+				(pinfunction "RX0_P_1")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "55")
+			(name "IT66021_RESET#")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "4")
+				(pinfunction "RX1_N_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "56")
+			(name "Net-(J201-+5V)")
+			(class "Default")
+			(node
+				(ref "J201")
+				(pin "10")
+				(pinfunction "DDC_SCL_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "11")
+				(pinfunction "HPD_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "12")
+				(pinfunction "+5V_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "13")
+				(pinfunction "GND_13")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "14")
+				(pinfunction "SHIELD_14")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "7")
+				(pinfunction "CK_P_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "8")
+				(pinfunction "CK_N_8")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "9")
+				(pinfunction "DDC_SDA_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "U301")
+				(pin "20")
+				(pinfunction "OUTB_D0_P_20")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "21")
+				(pinfunction "OUTB_D0_N_21")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "22")
+				(pinfunction "OUTB_D1_P_22")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "23")
+				(pinfunction "OUTB_D1_N_23")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "24")
+				(pinfunction "OUTB_D2_P_24")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "25")
+				(pinfunction "OUTB_D2_N_25")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "26")
+				(pinfunction "OUTB_CK_P_26")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "27")
+				(pinfunction "OUTB_CK_N_27")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "57")
+			(name "Net-(U202-HDMI_TX_CK_N)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "8")
+				(pinfunction "HDMI_TX_CK_N_8")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "11")
+				(pinfunction "GND_11")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "58")
+			(name "Net-(U202-HDMI_TX_CK_P)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "7")
+				(pinfunction "HDMI_TX_CK_P_7")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "10")
+				(pinfunction "VDD_10")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "59")
+			(name "Net-(U202-HDMI_TX_D0_N)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "2")
+				(pinfunction "HDMI_TX_D0_N_2")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "5")
+				(pinfunction "IN_D2_P_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "60")
+			(name "Net-(U202-HDMI_TX_D0_P)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "1")
+				(pinfunction "HDMI_TX_D0_P_1")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "4")
+				(pinfunction "IN_D1_N_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "61")
+			(name "Net-(U202-HDMI_TX_D1_N)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "4")
+				(pinfunction "HDMI_TX_D1_N_4")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "7")
+				(pinfunction "IN_CK_P_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "62")
+			(name "Net-(U202-HDMI_TX_D1_P)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "3")
+				(pinfunction "HDMI_TX_D1_P_3")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "6")
+				(pinfunction "IN_D2_N_6")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "63")
+			(name "Net-(U202-HDMI_TX_D2_N)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "6")
+				(pinfunction "HDMI_TX_D2_N_6")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "9")
+				(pinfunction "OE#_9")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "64")
+			(name "Net-(U202-HDMI_TX_D2_P)")
+			(class "Default")
+			(node
+				(ref "U202")
+				(pin "5")
+				(pinfunction "HDMI_TX_D2_P_5")
+				(pintype "output")
+			)
+			(node
+				(ref "U301")
+				(pin "8")
+				(pinfunction "IN_CK_N_8")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "65")
+			(name "Net-(U301-OUTA_CK_N)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "19")
+				(pinfunction "OUTA_CK_N_19")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "16")
+				(pinfunction "INT#_16")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "66")
+			(name "Net-(U301-OUTA_CK_P)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "18")
+				(pinfunction "OUTA_CK_P_18")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "15")
+				(pinfunction "I2C_SCL_15")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "67")
+			(name "Net-(U301-OUTA_D0_N)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "13")
+				(pinfunction "OUTA_D0_N_13")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "10")
+				(pinfunction "DDC_SDA_10")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "68")
+			(name "Net-(U301-OUTA_D0_P)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "12")
+				(pinfunction "OUTA_D0_P_12")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "9")
+				(pinfunction "HPD_9")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "69")
+			(name "Net-(U301-OUTA_D1_N)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "15")
+				(pinfunction "OUTA_D1_N_15")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "12")
+				(pinfunction "+5V_HDMI_12")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "70")
+			(name "Net-(U301-OUTA_D1_P)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "14")
+				(pinfunction "OUTA_D1_P_14")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "11")
+				(pinfunction "DDC_SCL_11")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "71")
+			(name "Net-(U301-OUTA_D2_N)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "17")
+				(pinfunction "OUTA_D2_N_17")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "14")
+				(pinfunction "I2C_SDA_14")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "72")
+			(name "Net-(U301-OUTA_D2_P)")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "16")
+				(pinfunction "OUTA_D2_P_16")
+				(pintype "output")
+			)
+			(node
+				(ref "U401")
+				(pin "13")
+				(pinfunction "RESET#_13")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "73")
+			(name "Net-(U401-GND1)")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "25")
+				(pinfunction "GND1_25")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "14")
+				(pinfunction "SDOUT_14")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "74")
+			(name "Net-(U401-GND2)")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "26")
+				(pinfunction "GND2_26")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "15")
+				(pinfunction "SCLK_15")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "75")
+			(name "Net-(U401-GND3)")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "27")
+				(pinfunction "GND3_27")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "16")
+				(pinfunction "CS#_16")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "76")
+			(name "Net-(U401-VDD12)")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "24")
+				(pinfunction "VDD12_24")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "13")
+				(pinfunction "SDIN_13")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "77")
+			(name "Net-(U401-VDD18)")
+			(class "Default")
+			(node
+				(ref "U401")
+				(pin "23")
+				(pinfunction "VDD18_23")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U501")
+				(pin "12")
+				(pinfunction "DVB_ASI_12")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "78")
+			(name "Net-(U501-GND4)")
+			(class "Default")
+			(node
+				(ref "J501")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U501")
+				(pin "26")
+				(pinfunction "GND4_26")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "79")
+			(name "PD_GPIO1")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "9")
+				(pinfunction "PPHV_9")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "80")
+			(name "PG_3V3")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "7")
+				(pinfunction "VOUT_7")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "81")
+			(name "PG_5V")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "7")
+				(pinfunction "VOUT_7")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "82")
+			(name "PP5V")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "11")
+				(pinfunction "GND2_11")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "83")
+			(name "PPHV")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "10")
+				(pinfunction "GPIO1_10")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "84")
+			(name "RATE_SEL0")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "8")
+				(pinfunction "BIT20_10_8")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "85")
+			(name "RATE_SEL1")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "7")
+				(pinfunction "STANDBY#_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "86")
+			(name "SDI_TX_N")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "25")
+				(pinfunction "GND3_25")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "87")
+			(name "SDI_TX_SPI_CS")
+			(class "Default")
+			(node
+				(ref "U205")
+				(pin "1")
+				(pinfunction "I2C_SDA_1")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U205")
+				(pin "3")
+				(pinfunction "SPI_MOSI_3")
+				(pintype "output")
+			)
+			(node
+				(ref "U205")
+				(pin "4")
+				(pinfunction "SPI_MISO_4")
+				(pintype "input")
+			)
+			(node
+				(ref "U501")
+				(pin "1")
+				(pinfunction "VIDEO_BUS_1")
+				(pintype "input")
+			)
+			(node
+				(ref "U501")
+				(pin "4")
+				(pinfunction "V_VSYNC_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "88")
+			(name "SDI_TX_SPI_SCK")
+			(class "Default")
+			(node
+				(ref "U205")
+				(pin "2")
+				(pinfunction "I2C_SCL_2")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U501")
+				(pin "2")
+				(pinfunction "PCLK_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "89")
+			(name "SDO_EN")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "11")
+				(pinfunction "SMPTE_BYPASS_11")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "90")
+			(name "SMPTE_BYPASS")
+			(class "Default")
+			(node
+				(ref "U501")
+				(pin "6")
+				(pinfunction "SDO_EN_6")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "91")
+			(name "SPI_SCK")
+			(class "Default")
+			(node
+				(ref "U205")
+				(pin "5")
+				(pinfunction "SPI_SCK_5")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "92")
+			(name "SS_3V3")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "1")
+				(pinfunction "VIN_1")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "93")
+			(name "SS_5V")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "1")
+				(pinfunction "VIN_1")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "94")
+			(name "SW_3V3")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "9")
+				(pinfunction "BOOT_9")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "95")
+			(name "SW_5V")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "9")
+				(pinfunction "BOOT_9")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "96")
+			(name "TMDS_OE#")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "3")
+				(pinfunction "IN_D1_P_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "97")
+			(name "USB_DN")
+			(class "Default")
+			(node
+				(ref "J103")
+				(pin "4")
+				(pinfunction "CC1_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "1")
+				(pinfunction "+5V_1_1")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "98")
+			(name "USB_DP")
+			(class "Default")
+			(node
+				(ref "J103")
+				(pin "5")
+				(pinfunction "CC2_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "2")
+				(pinfunction "+5V_2_2")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "99")
+			(name "VBUS")
+			(class "Default")
+			(node
+				(ref "J102")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J103")
+				(pin "6")
+				(pinfunction "GND_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "7")
+				(pinfunction "I2C_SCL_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "100")
+			(name "VIN_RAW")
+			(class "Default")
+			(node
+				(ref "J101")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U102")
+				(pin "5")
+				(pinfunction "SS_5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "101")
+			(name "unconnected-(J501-Pad2)")
+			(class "Default")
+			(node
+				(ref "J501")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+	)
+)
