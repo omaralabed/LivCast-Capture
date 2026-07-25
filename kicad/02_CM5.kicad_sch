@@ -18,7 +18,7 @@
     (effects (font (size 1.5 1.5) (bold yes)) (justify left bottom))
     (uuid "1b7265fb-dc61-46ad-a6e6-cd64ae97c69e")
   )
-  (text "CSI0 <-- IT6616 (03); CSI1 <-- CrossLink (04)"
+  (text "CSI0 <-- IT6616 (03); CSI1 <-- CrossLink (04) 4-lane from Antmicro MIPI0"
     (exclude_from_sim no)
     (at 25 22.5 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))

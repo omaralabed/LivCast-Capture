@@ -24,16 +24,16 @@ Camera in → on-box preview → USB-C **network video** to phone. Bonding is a 
 
 ```
 SDI in  ──► SDI RX ──► CSI bridge ──┐
-                                    ├──► CM5 ──┬── USB-C data ───► iPhone
-HDMI in ──► HDMI→CSI ───────────────┘          ├── HDMI out ─────► monitor
-                                               ├── SDI out ──────► SDI deck
-                                               └── 40-pin SPI ───► 3.5" preview
+                                    ├──► CM5 ──┬── USB-C data+charge ──► iPhone
+HDMI in ──► HDMI→CSI ───────────────┘          ├── HDMI out ───────────► monitor
+                                               ├── SDI out (playback) ─► SDI deck
+                                               └── 40-pin SPI ─────────► 3.5" preview
 
-Power:  D-Tap and/or USB-C PD in ──► box rail
-        USB-C phone ──► data (gadget) + charge out to iPhone
+SDI playback path (not input loop):
+  CM5 HDMI TX ──► HDMI RX (parallel) ──► GS2962A ──► SDI BNC
 ```
 
-Software picks which CSI stream is live (one input at a time). **Phone port charges the iPhone** (PD source) while carrying network video. **D-Tap + USB-C PD** power the box. No built-in battery.
+Software picks which CSI stream is live (one input at a time). **SDI out mirrors HDMI playback** (GS2962A), not a reclocked loop of SDI in. **Phone port charges the iPhone**. **D-Tap + USB-C PD** power the box. No built-in battery.
 
 ## Why USB network, not UVC
 

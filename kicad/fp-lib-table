@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "sdi-mipi-bridge-footprints")(type "KiCad")(uri "${KIPRJMOD}/libs/antmicro-sdi-mipi/sdi-mipi-bridge-footprints")(options "")(descr "Antmicro SDI-MIPI Bridge footprints (Apache-2.0)"))
+)

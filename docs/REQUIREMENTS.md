@@ -37,7 +37,7 @@ Power:  USB-C PD in (wall charger or D-Tap→USB-C adapter) ──► 5 V / 5 A 
 | HDMI in | In | Camera |
 | Input select | Software | HDMI **or** SDI |
 | HDMI out | Out | Playback / external monitor |
-| SDI out | Out | Playback / SDI deck |
+| SDI out | Out | Playback / SDI deck via **GS2962A** from CM5 HDMI mirror (**not** input loop) |
 | USB-C (phone) | Data + charge | Network video → iPhone (**not** UVC); **box also charges the phone** |
 | USB-C (power) | In | PD sink: wall charger **or** D-Tap on box / D-Tap→USB-C |
 | D-Tap | In | Camera battery (~12–17 V) → same 5 V system rail |
@@ -61,7 +61,7 @@ Power:  USB-C PD in (wall charger or D-Tap→USB-C adapter) ──► 5 V / 5 A 
 - **Ingest:** Dual bridge → CSI; one active input.
 - **iPhone path:** USB Ethernet gadget + IP video. No UVC. Phone USB-C also **charges** the iPhone (box = PD source).
 - **HDMI out:** Native CM5 HDMI TX.
-- **SDI out:** Serializer or equivalent (not native on CM5).
+- **SDI out:** Real playback via **IT66021FN** (HDMI RX parallel from CM5 HDMI TX) → **GS2962A** → BNC — **not** Antmicro SDI-in reclocked loop.
 - **Preview:** On-box 3.5" SPI; HDMI/SDI out for real monitoring.
 
 ## Format targets
@@ -82,7 +82,7 @@ Hardware must **accept and deliver** 720p, 1080i, and 1080p on both HDMI and SDI
 
 **Locked** — see [`CHIP_SHORTLIST.md`](CHIP_SHORTLIST.md) for full table, alternates, and format notes.
 
-Primary MPNs: **CM5** (eMMC); **IT6616** (HDMI→CSI0, **CSI interlaced**); **GS2971A** + **LIF-MD6000-6JMG80I** CrossLink (SDI→CSI1, Antmicro sch); **GS2962A** + **GS2989** (SDI out); **TPS25751** (PD sink ≥60 W + phone PD source); **LM76003** + **TPS62130A**; **TPS25947**; Hosyond 3.5" SPI LCD. **Rejected:** TC358743.
+Primary MPNs: **CM5** (eMMC); **IT6616** (HDMI→CSI0, **CSI interlaced**); **GS2971A** + **LIF-MD6000-6JMG80I** CrossLink (SDI→CSI1, Antmicro sch); **IT66021FN** + **GS2962A** (SDI playback out from CM5 HDMI mirror; **GS2989** optional dual drive); **TPS25751** (PD sink ≥60 W + phone PD source); **LM76003** + **TPS62130A**; **TPS25947**; Hosyond 3.5" SPI LCD. **Rejected:** TC358743.
 
 ## Software split
 
@@ -99,3 +99,4 @@ Primary MPNs: **CM5** (eMMC); **IT6616** (HDMI→CSI0, **CSI interlaced**); **GS
 - Dual simultaneous HDMI+SDI streaming (select one)
 - Built-in battery / onboard NP-F pack
 - Powering the **box** from the iPhone (phone is charged **by** the box, not the reverse)
+- Shipping Antmicro-style SDI **input loop** (J2/GS2988) as the only / product **SDI out**

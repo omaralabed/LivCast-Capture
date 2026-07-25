@@ -2,6 +2,8 @@
 
 LivCast Capture overlay note (not part of Antmicro’s tree). Upstream clone lives in `sdi-mipi-bridge-hw/`.
 
+LivCast `kicad/04_SDI_CSI.kicad_sch` now contains the adapted Antmicro schematic (title/company/CSI1+I2C globals).
+
 ## Links
 
 - Product / board page: https://openhardware.antmicro.com/boards/sdi-mipi-bridge/
