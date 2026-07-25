@@ -5,8 +5,8 @@ Priority: **guaranteed** 720p / **1080i** / 1080p on **both** HDMI and SDI (best
 
 Reference designs:
 - **Antmicro SDI→MIPI CSI bridge** (golden SDI path): [openhardware portal](https://openhardware.antmicro.com/boards/sdi-mipi-bridge/) · [GitHub](https://github.com/antmicro/sdi-mipi-bridge-hw) · local copy [`refs/antmicro-sdi-mipi-bridge/`](../refs/antmicro-sdi-mipi-bridge/) (KiCad + `doc/sdi-mipi-bridge.pdf`, Apache-2.0)
-- **Sheet 04** (`kicad/04_SDI_CSI.kicad_sch`): Antmicro-based **GS2971A + CrossLink** for **SDI ingest → CSI1** only. Antmicro **J2/GS2988 input-loop is NOT product SDI out**.
-- **SDI playback out (required):** **GS2962A** — sheet `07_SDI_OUT` symbols placed: HDMI 1:2 buffer → **IT66021FN** → parallel → **GS2962A** → BNC; **GS2989 not required** (integrated cable driver)
+- **SDI ingest (Antmicro):** condensed on single schematic [`kicad/LivCast_Capture.kicad_sch`](../kicad/LivCast_Capture.kicad_sch); full GS2971A + CrossLink detail in [`kicad/archive_sheets/04_SDI_CSI.kicad_sch`](../kicad/archive_sheets/04_SDI_CSI.kicad_sch) + [`refs/antmicro-sdi-mipi-bridge/`](../refs/antmicro-sdi-mipi-bridge/). Antmicro **J2/GS2988 input-loop is NOT product SDI out**.
+- **SDI playback out (required):** **GS2962A** — real symbols on single schematic `LivCast_Capture.kicad_sch` (SDI PLAYBACK OUT region; from archived `07_SDI_OUT`): HDMI 1:2 buffer → **IT66021FN** → parallel → **GS2962A** → BNC; **GS2989 not required** (integrated cable driver)
 - ITE **IT6616** HDMI→CSI (datasheet: **interlaced mode in CSI**)
 - Prior Livcast adapter BOM for Semtech SDI + TI power (UVC path rejected)
 
@@ -23,7 +23,7 @@ Reference designs:
 | SDI RX | **GS2971A** | Semtech | 3G-SDI EQ + deserialize + reclock (10-bit 4:2:2 parallel) |
 | SDI → CSI | **LIF-MD6000-6JMG80I** | Lattice CrossLink | Parallel → MIPI CSI-2 (CAM1); **copy Antmicro sch** |
 | SDI out (ser) | **GS2962A** | Semtech | **Required** — 3G-SDI serializer for **playback** out (not input loop) |
-| SDI cable driver | **Not required on sheet 07** (GS2962A integrated CD) | Semtech | GS2989 only if dual/external drive needed |
+| SDI cable driver | **Not required** (GS2962A integrated CD on flat sch) | Semtech | GS2989 only if dual/external drive needed |
 | HDMI tap for SDI out | **IT66021FN** (or equiv. HDMI RX) | ITE | Parallel from **CM5 HDMI TX** mirror → GS2962A |
 | USB-C PD (power in) | **TPS25751D** | TI | PD **sink** ≥60 W → system VIN |
 | USB-C PD (phone) | **TPS25751S/D** | TI | PD **source** + data **UFP** (gadget); charge iPhone |
@@ -60,7 +60,7 @@ Power: D-Tap and/or USB-C PD in ──► 5V0
 Software selects **CSI0 or CSI1** (one live input).
 
 **SDI out = playback** (same program as HDMI out from CM5), **not** a reclocked loop of SDI in.  
-Antmicro J2/GS2988 loop may stay on sheet 04 for debug only — **do not ship as the product SDI out.**
+Antmicro J2/GS2988 loop may stay in `archive_sheets/04` for debug only — **do not ship as the product SDI out.**
 
 ---
 

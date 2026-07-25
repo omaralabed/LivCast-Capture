@@ -47,7 +47,7 @@ Design for **720p / 1080i / 1080p** as a hard requirement. HDMI path uses **IT66
 
 - Spec: [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md)
 - Chips: [`docs/CHIP_SHORTLIST.md`](docs/CHIP_SHORTLIST.md)
-- Hardware: [`kicad/LivCast_Capture.kicad_pro`](kicad/LivCast_Capture.kicad_pro) (Rev A block schematic)
+- Hardware: single schematic [`kicad/LivCast_Capture.kicad_sch`](kicad/LivCast_Capture.kicad_sch) via [`kicad/LivCast_Capture.kicad_pro`](kicad/LivCast_Capture.kicad_pro); old sheets in [`kicad/archive_sheets/`](kicad/archive_sheets/)
 - Firmware: Linux CSI capture + USB gadget + IP video
 - Phone: Livcast-iOS USB-network ingest (separate app repo)
 

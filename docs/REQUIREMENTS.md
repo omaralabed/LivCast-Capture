@@ -1,5 +1,7 @@
 # LivCast Capture — Requirements
 
+
+**Schematic:** single file [`kicad/LivCast_Capture.kicad_sch`](../kicad/LivCast_Capture.kicad_sch) (open via `LivCast_Capture.kicad_pro`); archived multi-sheet hierarchy in [`kicad/archive_sheets/`](../kicad/archive_sheets/).
 Status: **I/O + dual-bridge ingest locked** (2026-07-25).
 
 ## Product

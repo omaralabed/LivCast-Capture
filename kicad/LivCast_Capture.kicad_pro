@@ -647,7 +647,7 @@
       {
         "filename": "LivCast_Capture.kicad_sch",
         "name": "LivCast_Capture",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "34e0f6c0-b1f6-4142-9256-328860ff3b36"
       }
     ],
     "used_designators": "",
@@ -655,7 +655,7 @@
   },
   "sheets": [
     [
-      "46a3f4f5-efb4-4367-91c4-8e99ca6077fd",
+      "LivCast_Capture.kicad_sch",
       ""
     ]
   ],
